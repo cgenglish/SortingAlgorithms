@@ -6,13 +6,15 @@ public class Project {
     public static void main(String[] args) {
         int[] arr = { 3, 4, 21, 1, 58, 87, 89, 9000, 2, 1 };
 
-        //System.out.println(arr); This gives us a destination value
+        //System.out.println(arr); This gives us a destination value in memory
 
         for(int value : arr) {
             System.out.print(" " + value);
         }
 
-        BubbleSort(arr);
+
+        SelectionSort(arr);
+        //BubbleSort(arr);
         System.out.println();
         for(int value : arr) {
             System.out.print(" " + value);
@@ -36,7 +38,24 @@ public class Project {
 
     }
 
-    //public static void Swap(){
+    public static void SelectionSort(int[] arr) {
+        int minIndex, temp;
 
-    //}
+        for(int i = 0; i < arr.length; i++) {
+            minIndex = i;
+
+            for(int j = i; j < arr.length; j++) {
+                if(arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            //swap
+            temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+
+        }
+
+
+    }
 }
