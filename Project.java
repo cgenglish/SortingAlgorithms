@@ -25,7 +25,8 @@ public class Project {
         // SelectionSort(arr);
         // InsertionSort(arr);
         // Arrays.sort(arr);
-        QuickSort(arr);
+        // QuickSort(arr);
+        MergeSort(arr);
         
         System.out.println();
 
@@ -105,7 +106,7 @@ public class Project {
             if(l < middle){
                 leftArray[l] = arr[l];
             } else{
-                rightArray[r] = arr[r];
+                rightArray[r] = arr[l];
                 r++;
             }
         }
@@ -122,7 +123,7 @@ public class Project {
         int mainIndex = 0, leftArrIndex = 0, rightArrIndex = 0;
         
         //main condition for merge comparisons
-        if(leftArrIndex < leftArraySize && rightArrIndex < rightArraySize) {
+        while(leftArrIndex < leftArraySize && rightArrIndex < rightArraySize) {
             if(leftArray[leftArrIndex] < rightArray[rightArrIndex]) {
                 array[mainIndex] = leftArray[leftArrIndex];
                 mainIndex++;
